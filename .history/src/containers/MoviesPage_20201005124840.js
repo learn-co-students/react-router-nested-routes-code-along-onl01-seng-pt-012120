@@ -7,8 +7,8 @@ import MovieShow from '../components/MovieShow';
 const MoviesPage = ({ match, movies }) => (
   <div>
     <MoviesList movies={movies} />
-    <Route exact path={match.url} render={() => <h3>Choose a movie from the list above</h3>}/>
-    <Route path={`${match.url}/:movieId`} render={routerProps => <MovieShow {...routerProps} movies={movies} /> }/>
+    // Adding code to pass the movies to the `MovieShow` component
+    <Route path={`${match.url}/:movieId`} component={<MovieShow movies={movies} /> }/>
   </div>
 )
  
